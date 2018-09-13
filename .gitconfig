@@ -1,0 +1,18 @@
+[user]
+        name = kaihanch
+        email = kaihanhh@gmail.com
+
+[core]
+        editor = vim
+        ignorecase = false
+        excludesfile = /Users/kaihan.chang/.gitignore_global
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        log = auto
+[alias]
+        co = checkout
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'
+[pager]
+        diff =
