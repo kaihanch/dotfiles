@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-
-# git auto complete/ svn
+# git autocomplete/ svn
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
@@ -18,3 +17,7 @@ alias gcma="git commit --amend"
 # svn alias
 alias sst="svn status"
 alias slg="svn log -l"
+
+# docker alias
+alias dockerrmiall="docker rmi -f $(docker images -q)"
+alias dockerrmall="docker rm -Vf $(docker ps -a -q)"
