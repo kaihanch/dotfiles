@@ -14,9 +14,17 @@ alias gst="git status"
 alias gcmm="git commit -m"
 alias gcma="git commit --amend"
 
-# svn alias
+# svn alias 
 alias sst="svn status"
 alias slg="svn log -l"
+
+sls() {
+   if [[ -n $2 ]]; then
+       svn status | grep "^$1" | awk '{print $2}' | xargs;
+   else
+       svn status | grep "^$1" | awk '{print $2}';    
+   fi
+}
 
 # docker alias
 alias dockerrmiall="docker rmi -f $(docker images -q)"
