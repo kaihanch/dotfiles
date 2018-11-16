@@ -16,11 +16,12 @@ alias gcma="git commit --amend"
 
 # svn alias 
 alias sst="svn status"
+
 # List all new files. e.g sls ?  
 # Add all new files. e.g sls ? svn add  
 function sls(){
    if [[ -n $2 ]]; then
-       svn status | grep "^$1" | awk '{print $2}' | xargs;
+       svn status | grep "^$1" | awk '{print $2}' | xargs $2 $3;
    else
        svn status | grep "^$1" | awk '{print $2}';    
    fi
