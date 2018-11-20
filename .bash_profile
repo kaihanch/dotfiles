@@ -14,13 +14,14 @@ alias gst="git status"
 alias gcmm="git commit -m"
 alias gcma="git commit --amend"
 
+
 # svn alias 
 alias slg="svn log -l 20"
+alias sst="svn status"
 
-# Print the status . e.g sst 
-# List all new files. e.g sst ?  
-# Add all new files. e.g sst ? svn add  
-function sst(){
+# List all new files. e.g sls ?  
+# Add all new files. e.g sls ? svn add  
+function sls(){
     cmd="svn status";
     
     if [[ -n $1 ]]; then
@@ -31,9 +32,9 @@ function sst(){
        cmd="$cmd | awk '{print \$2}' | xargs $2 $3";
     fi
     
-    eval $cmd
+#    echo $cmd;
+    eval $cmd;
 }
-
 
 # docker alias
 alias dockerrmiall="docker rmi -f $(docker images -q)"
