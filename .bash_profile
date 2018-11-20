@@ -15,28 +15,25 @@ alias gcmm="git commit -m"
 alias gcma="git commit --amend"
 
 # svn alias 
-alias sst="svn status"
+alias slg="svn log -l 20"
 
-# List all new files. e.g sls ?  
-# Add all new files. e.g sls ? svn add  
-function sls(){
-   if [[ -n $2 ]]; then
-       svn status | grep "^$1" | awk '{print $2}' | xargs $2 $3;
-   else
-       svn status | grep "^$1" | awk '{print $2}';    
-   fi
+# Print the status . e.g sst 
+# List all new files. e.g sst ?  
+# Add all new files. e.g sst ? svn add  
+function sst(){
+    cmd="svn status";
+    
+    if [[ -n $1 ]]; then
+       cmd="$cmd | grep ^$1 ";
+    fi
+    
+    if [[ -n $2 ]]; then
+       cmd="$cmd | awk '{print \$2}' | xargs $2 $3";
+    fi
+    
+    eval $cmd
 }
 
-# svn log display only kaihan e.g slg 10 kaihan
-function slg(){
-   username=$2
-   if [[ -n $2 ]]; then
-       #display a specific user's commits in svn log
-       svn log -l $1 | sed -n "/${username}/,/-----$/p"; 
-   else
-       svn log -l $1;    
-   fi
-}
 
 # docker alias
 alias dockerrmiall="docker rmi -f $(docker images -q)"
