@@ -18,6 +18,8 @@ alias gcma="git commit --amend"
 # svn alias 
 alias slg="svn log -l 20"
 alias sst="svn status"
+# use phpstorm as diff toll 
+alias sdifftool="svn diff --diff-cmd ~/svn-diffwrap.sh"
 
 # List all new files. e.g sls ?  
 # Add all new files. e.g sls ? svn add  
