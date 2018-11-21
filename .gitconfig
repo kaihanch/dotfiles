@@ -16,3 +16,10 @@
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'
 [pager]
         diff =
+        
+[diff]
+    tool = pstorm
+[difftool]
+    prompt = false
+[difftool.pstorm]
+    cmd = /usr/local/bin/pstorm diff "$LOCAL" "$REMOTE"
