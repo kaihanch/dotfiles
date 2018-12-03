@@ -14,15 +14,14 @@ alias gst="git status"
 alias gcmm="git commit -m"
 alias gcma="git commit --amend"
 
-
 # svn alias 
-alias slg="svn log -l 20"
+alias slg="svn log -l"
 alias sst="svn status"
 # use phpstorm as diff toll 
 alias sdifftool="svn diff --diff-cmd ~/svn-diffwrap.sh"
 
-# List all new files. e.g sls ?  
-# Add all new files. e.g sls ? svn add  
+# List all new files. e.g sls "\?"  
+# Add all new files. e.g sls "\?" svn add  
 function sls(){
     cmd="svn status";
     
@@ -34,10 +33,14 @@ function sls(){
        cmd="$cmd | awk '{print \$2}' | xargs $2 $3";
     fi
     
-#    echo $cmd;
+    echo $cmd;
     eval $cmd;
 }
 
 # docker alias
 alias dockerrmiall="docker rmi -f $(docker images -q)"
 alias dockerrmall="docker rm -Vf $(docker ps -a -q)"
+
+# work alias
+alias listdir="ls -d */"
+alias listfile="ls -ap | grep -v /"
