@@ -20,7 +20,6 @@ alias sst="svn status"
 # use phpstorm as diff toll 
 alias sdifftool="svn diff --diff-cmd ~/svn-diffwrap.sh"
 
-
 # List all new files. e.g sls ? 
 # Add all new files. e.g sls ? svn add  
 function sls(){
@@ -45,10 +44,22 @@ alias dockerrmiall="docker rmi -f $(docker images -q)"
 alias dockerrmall="docker rm -Vf $(docker ps -a -q)"
 
 # work alias
+
+alias open21="open smb://@172.19.1.21/"
 alias listdir="ls -d */"
 alias listfile="ls -ap | grep -v /"
+alias listmodify="svn status | grep '^M' | awk '{print \$2}'"
+
 
 # type something (optional), then press up/down arrow key to search through history for commands that begin with what you typed.
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+
+# Set the iTerm tab title to the current directory
+setTabTitle() {
+  echo -ne "\033]0;${PWD}\007"
+}
+if [ $ITERM_SESSION_ID ]; then
+  export PROMPT_COMMAND="setTabTitle;$PROMPT_COMMAND"
+fi
