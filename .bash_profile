@@ -58,7 +58,7 @@ bind '"\e[B": history-search-forward'
 
 # Set the iTerm tab title to the current directory
 setTabTitle() {
-  echo -ne "\033]0;${PWD}\007"
+  echo -ne "\033]0;${PWD/$HOME/~}\007"
 }
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND="setTabTitle;$PROMPT_COMMAND"
