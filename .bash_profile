@@ -40,11 +40,14 @@ function sls(){
 }
 
 # docker alias
-alias dockerrmiall="docker rmi -f $(docker images -q)"
-alias dockerrmall="docker rm -Vf $(docker ps -a -q)"
+function dockerrmall(){
+    docker rm -vf $(docker ps -a -q)
+}
+function dockerrmiall(){
+    docker rmi -f $(docker images -q)
+}
 
 # work alias
-
 alias open21="open smb://@172.19.1.21/"
 alias listdir="ls -d */"
 alias listfile="ls -ap | grep -v /"
