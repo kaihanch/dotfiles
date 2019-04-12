@@ -52,6 +52,7 @@ alias open21="open smb://@172.19.1.21/"
 alias listdir="ls -d */"
 alias listfile="ls -ap | grep -v /"
 alias listmodify="svn status | grep '^M' | awk '{print \$2}'"
+alias codecept="vendor/bin/codecept"
 
 
 # type something (optional), then press up/down arrow key to search through history for commands that begin with what you typed.
