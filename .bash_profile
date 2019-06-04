@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 # git autocomplete/ svn
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
@@ -53,6 +56,8 @@ alias listdir="ls -d */"
 alias listfile="ls -ap | grep -v /"
 alias listmodify="svn status | grep '^M' | awk '{print \$2}'"
 alias codecept="vendor/bin/codecept"
+alias wifion="networksetup -setnetworkserviceenabled Wi-Fi on"
+alias wifioff="networksetup -setnetworkserviceenabled Wi-Fi off"
 
 
 # type something (optional), then press up/down arrow key to search through history for commands that begin with what you typed.
