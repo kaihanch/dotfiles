@@ -72,3 +72,11 @@ setTabTitle() {
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND="setTabTitle;$PROMPT_COMMAND"
 fi
+
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+
+export NVM_DIR="/Users/kaihan.chang/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export AWS_PROFILE=cteam-SDK-local 
